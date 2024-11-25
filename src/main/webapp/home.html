@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Home Page</title>
+</head>
+<body>
+<div class="menuToggle"></div>
+
+<div class="resume">
+    <h1>Bem-vindo ao seu Enxoval Caseiro</h1>
+    <img src="sala.jpg" alt="" class="sala">
+
+    <div class="infos">
+        <ul>
+            <li class="botoes"><a href="dicas.html" class="linkagem">Dicas</a></li>
+            <li class="botoes"><a href="inspiracoes.html" class="linkagem">Inspirações</a></li>
+            <li class="botoes"><a href="checklist.html" class="linkagem">Verificar Progresso</a></li>
+
+        </ul>
+    </div>
+
+    <div class="sobre">
+        <h2>Lar & Aconchego</h2>
+        <br>
+        <p>Estamos aqui para ajudar você a transformar sua nova casa em um lar acolhedor e estiloso. Explore nossas dicas práticas,
+            inspirações criativas e checklist úteis para montar o seu enxoval dos sonhos. Aqui você vai encontrar dicas para cada
+            cômodo da sua casa com fotos e links para deixar tudo ainda mais a sua cara e transformar sua casa em um lar aconchegante.</p>
+    </div>
+</div>
+
+<div class="central">
+    <a href="Cadastro/login.html" class="link">
+        <div class="icon"><ion-icon name="person-circle-outline"></ion-icon></div>
+        <div class="text">Login</div>
+    </a>
+</div>
+
+<div class="sidebar">
+    <ul>
+        <li class="logo" style="--bg:#825497;">
+            <a href="#">
+                <div class="icon"><img src="logo.jpg" alt="some text" width=100 height=80></div>
+                <div class="text">Lar & Aconchego</div>
+            </a>
+        </li>
+        <div class="Menulist">
+            <li style="--bg:#825497;" class="active">
+                <a href="#">
+                    <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
+                    <div class="text">Home</div>
+                </a>
+            </li>
+
+            <li style="--bg:#825497;">
+                <a href="cozinha.html">
+                    <div class="icon"><ion-icon name="restaurant-outline"></ion-icon></div>
+                    <div class="text">Cozinha</div>
+                </a>
+
+        </div>
+
+
+    </ul>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+    let menuToggle = document.querySelector('.menuToggle');
+    let sidebar = document.querySelector('.sidebar');
+    menuToggle.onclick = function() {
+        menuToggle.classList.toggle('active');
+        sidebar.classList.toggle('active');
+    }
+
+    let Menulist = document.querySelectorAll('.Menulist li');
+    function activeLink() {
+        Menulist.forEach((item) => item.classList.remove('active'));
+        this.classList.add('active');
+    }
+    Menulist.forEach((item) => item.addEventListener('click', activeLink));
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="checklist.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="menuToggle"></div>
+
+    <div class="checklist">
+        <h1>Verifique seu progresso</h1>
+
+       <div class="container">
+        
+        <div class="progress" style="--i:85;--clr: #ffa117;">
+            <h3>15<span>%</span></h3>
+            <h4>Sala de estar</h4>
+        </div>
+        <div class="progress" style="--i:85;--clr: #0fc70f;">
+            <h3>100<span>%</span></h3>
+            <h4>Cozinha</h4>
+        </div>
+        <div class="progress" style="--i:85;--clr: #2196f3;">
+            <h3>85<span>%</span></h3>
+            <h4>Sala de jantar</h4>
+        </div>
+        <div class="progress" style="--i:85;--clr: #b145e9;">
+            <h3>95<span>%</span></h3>
+            <h4>Banheiro</h4>
+        </div>
+        <div class="progress" style="--i:85;--clr: #e91e63;">
+            <h3>33<span>%</span></h3>
+            <h4>Quarto</h4>
+        </div>
+       
+        </div>
+    </div>
+
+
+
+    <div class="central">
+        <a href="Cadastro/login.html" class="link">
+            <div class="icon"><ion-icon name="person-circle-outline"></ion-icon></div>
+            <div class="text">Login</div>
+        </a>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li class="logo" style="--bg:#825497;">
+                <a href="#">
+                    <div class="icon"><img src="logo.jpg" alt="some text" width=100 height=80></div>
+                    <div class="text">Lar & Aconchego</div>
+                </a>
+            </li>
+            <div class="Menulist">
+                <li style="--bg:#f44336;" class="active">
+                <a href="home.html">
+                    <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
+                    <div class="text">Home</div>
+                </a>
+                </li>
+
+                <li style="--bg:#0fc70f;">
+                <a href="cozinha.html">
+                    <div class="icon"><ion-icon name="restaurant-outline"></ion-icon></div>
+                    <div class="text">Cozinha</div>
+                </a>
+                </li>
+
+            </div>
+
+
+        </ul>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <script>
+                let menuToggle = document.querySelector('.menuToggle');
+                let sidebar = document.querySelector('.sidebar');
+                menuToggle.onclick = function(){
+                    menuToggle.classList.toggle('active');
+                    sidebar.classList.toggle('active');
+                }
+
+                let Menulist = document.querySelectorAll('.Menulist li');
+                function activeLink(){
+                    Menulist.forEach((item) =>
+                    item.classList.remove('active'));
+                    this.classList.add('active')
+                }
+                Menulist.forEach((item)=>
+                item.addEventListener('click', activeLink));
+        </script>
+</body>
+</html>

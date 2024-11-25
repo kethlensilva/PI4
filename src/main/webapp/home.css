@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css?family=Poppings:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppings', sans-serif;;
+}
+:root
+{
+    --clr: #dddddd;
+}
+body
+{
+    min-height: 100vh;
+    background: var(--clr);
+}
+.sidebar
+{
+    position: absolute;
+    width: 80px;
+    height: 100vh;
+    background: #91849d;
+    transition: 0.5s;
+    padding-left: 10px;
+    overflow: hidden;
+}
+.sidebar.active
+{
+    width: 300px;
+}
+.sidebar ul
+{
+    position: relative;
+    height: 100vh;
+}
+.sidebar ul li
+{
+    position: relative;
+    list-style: none;
+}
+.sidebar ul li.active
+{
+    background: var(--clr);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.sidebar ul li.active::before
+{
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px 0 5px var(--clr);
+    background: transparent;
+}
+.sidebar ul li.active::after
+{
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 5px -5px 0 5px var(--clr);
+    background: transparent;
+}
+.sidebar ul li.logo
+{
+    margin-bottom: 50px;
+}
+.sidebar ul li.logo .icon
+{
+    font-size: 2em;
+    color: var(--clr);
+}
+.sidebar ul li.logo .text
+{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--clr);
+}
+.sidebar ul li a
+{
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.sidebar ul li a .icon
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    padding-left: 10px;
+    height: 70px;
+    font-size: 1.5em;
+    color: #333;
+    transition: 0.5s;
+}
+.sidebar ul li a .text
+{
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #333;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.sidebar ul li.active a .icon
+{
+    color: #91849d;
+}
+.sidebar ul li.active a .text
+{
+    color: var(--bg);
+}
+.sidebar ul li:hover a .icon,
+.sidebar ul li:hover a .text
+{
+    color: var(--bg);
+}
+.sidebar ul li.active a .icon::before
+{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    width: 60px;
+    background: var(--bg);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.sidebar ul li:hover.active a .icon::before
+{
+    background: #91849d;
+}
+.bottom
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.imgBx
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.menuToggle
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuToggle::before
+{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #91849d;
+    transform: translateY(-9px);
+    transition: 0.5s;
+    box-shadow: 0 9px 0 #91849d;
+}
+.menuToggle::after
+{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #91849d;
+    transform: translateY(9px);
+    transition: 0.5s;
+}
+.menuToggle.active::before
+{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #91849d;
+}
+.menuToggle.active::after
+{
+    transform: translateY(0px) rotate(-45deg);
+}
+.central {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+    width: 150px;
+    height: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex; /* Mantém os itens da '.central' em linha */
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
+.central a {
+    display: flex; /* Faz a tag <a> ser um contêiner flexível */
+    align-items: center; /* Alinha os elementos verticalmente no centro */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.central .icon {
+    display: inline-block; /* Exibe o ícone como um bloco em linha */
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+    font-size: 50px;
+}
+
+.central .text {
+    color: #825497; /* Define a cor do texto como vermelha */
+    font-size: 25px;
+}
+.central .icon ion-icon {
+    color: #91849d; /* ou outra cor indesejada */
+}
+.central .text:hover
+{
+    color: #825497;
+}
+.central .icon:hover ion-icon
+{
+    color: #825497;
+}
+.resume {
+    position: absolute;
+    left: 20%;
+    width: 65%;
+    background: transparent;
+    height: 90%;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column; /* Adiciona esta linha para empilhar elementos em coluna */
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.resume h1 {
+    margin-bottom: 20px; /* Espaço entre o título e a imagem */
+    color: #825497;
+}
+
+.resume .sala {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+}
+.sala
+{
+    border-radius: 1%;
+}
+.infos
+{
+    width: 100%;
+    background: transparent;
+    height: 10%;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2%;
+}
+
+.links-list {
+    list-style-type: none; /* Remove o estilo da lista */
+    padding: 0; /* Remove o padding */
+    display: flex; /* Faz os itens ficarem lado a lado */
+    gap: 15px; /* Espaçamento entre os links */
+    align-items: flex-start; /* Alinha os itens no topo da linha */
+}
+
+.botoes {
+    display: inline; /* Garante que os links fiquem na mesma linha */
+}
+
+.linkagem {
+    background-color: #825497; /* Fundo roxo */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 15px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    transition: background-color 0.3s; /* Efeito de transição */
+    margin-top: 1px; /* Espaço acima de cada link */ /* Adicionado para criar espaçamento adicional */
+}
+
+.linkagem:hover {
+    background-color: darkviolet; /* Muda a cor ao passar o mouse */
+}
+.sobre
+{
+    width: 100%;
+    background: transparent;
+    height: 30%;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: flex-start;
+}
+h2
+{
+    color: #825497;
+
+
+}
+.sobre {
+    display: flex;
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto dentro do h2 e p */
+}
+
+.sobre h2 {
+    margin: 0; /* Remove margens padrão */
+}
+
+.sobre p {
+    margin-top: 5px; /* Ajusta a margem entre h2 e p */
+    color: #1E1E1E;
+}
+.lista {
+    display: flex; /* Exibe as listas lado a lado */
+    list-style-type: none; /* Remove os números padrão */
+    padding: 0%; /* Remove o padding padrão */
+    margin: 0%; /* Remove a margem padrão */
+}
+
+.lista li {
+    background-color: transparent; /* Fundo branco */
+    border: 2px solid white;
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    margin: 10px; /* Espaçamento entre as listas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    flex: 1; /* Permite que os itens cresçam igualmente */
+}
+
+.lista li p {
+    margin: 0; /* Remove a margem padrão do parágrafo */
+}
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 200px;
+    margin: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.item input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+label
+{
+    color: #91849d;
+}
