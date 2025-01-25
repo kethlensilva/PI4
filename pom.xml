@@ -15,14 +15,14 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
-      <version>3.1.0</version>
+      <version>3.3.7</version>
     </dependency>
 
     <!-- Spring Boot Starter Web -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-      <version>3.1.0</version>
+      <version>3.3.7</version>
     </dependency>
 
     <!-- Spring Data JPA -->
